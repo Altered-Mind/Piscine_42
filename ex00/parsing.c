@@ -6,11 +6,11 @@
 /*   By: jcalais <joan.calais@learner.42.tech>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:01:04 by jcalais           #+#    #+#             */
-/*   Updated: 2026/02/07 18:41:23 by jcalais          ###   ########.fr       */
+/*   Updated: 2026/02/07 22:00:12 by jcalais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_verif_inputs(char *str)
+int	ft_check_inputs(char *str)
 {
 	int	i;
 	int	count;
@@ -30,15 +30,20 @@ int	ft_verif_inputs(char *str)
 	return (1);
 }
 
-int	ft_parse(char *str, int *stockage)
+void	ft_char_to_int(char *str, int *converted)
 {
 	int	i;
 	int	n;
 
 	i = 0;
 	n = 0;
-	while(str[i])
+	while (str[i])
 	{
-		if (str[i] <=4 && str[i] >= 1)
+		if (str[i] >= 1 && str[i] <= 4)
+		{
+			converted[n] = str[i] - '0';
+			n++;
+		}
+		i++;
 	}
 }
